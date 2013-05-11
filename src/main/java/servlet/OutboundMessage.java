@@ -21,7 +21,7 @@ public class OutboundMessage {
     			"</soapenv:Body>" +
     		"</soapenv:Envelope>";
 	
-	private final String message;
+	public String message;
 	
 	public OutboundMessage(String xml) {
 		message = xml;
@@ -30,7 +30,7 @@ public class OutboundMessage {
 	@SuppressWarnings("deprecation")
 	public void doCallback(HttpServletRequest req){
 		try{
-			String urlParameters = this;
+			String urlParameters = message;
 			String request = "https://" + this.getRESTInstance() + ".salesforce.com/services/apexrest" + req.getPathInfo();
 			System.err.println("POSTing " + urlParameters + " to: " + request);
 			
