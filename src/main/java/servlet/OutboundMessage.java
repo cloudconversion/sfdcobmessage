@@ -30,7 +30,7 @@ public class OutboundMessage {
 	@SuppressWarnings("deprecation")
 	public void doCallback(HttpServletRequest req){
 		try{
-			String urlParameters = "{\"oid\":\"" + this.getSObjectId() + "\"}";
+			String urlParameters = this;
 			String request = "https://" + this.getRESTInstance() + ".salesforce.com/services/apexrest" + req.getPathInfo();
 			System.err.println("POSTing " + urlParameters + " to: " + request);
 			
@@ -41,7 +41,7 @@ public class OutboundMessage {
 			connection.setInstanceFollowRedirects(false);
 			connection.setRequestMethod("POST");
 			connection.setRequestProperty("Authorization", "Bearer " + this.getSessionId());
-			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setRequestProperty("Content-Type", "application/xml");
 			connection.setUseCaches(false);
 			
 			DataOutputStream wr = new DataOutputStream(connection.getOutputStream ());
