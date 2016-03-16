@@ -80,15 +80,15 @@ public class OutboundMessage {
 	}
 	
 	public String getInstance() throws MalformedURLException{
-    String instance = "";
-		String host = this.getPartnerUrl().getHost();
-    String patternStr = "(.+).salesforce.com";
-    Pattern pattern = Pattern.compile(patternStr);
-    Matcher matcher = pattern.matcher(host);
-    if(matcher.find()) {
-      instance = matcher.group(1);
-    }
-		return instance;
+        String instance = "";
+        String host = this.getPartnerUrl().getHost();
+        String patternStr = "(.+).salesforce.com";
+        Pattern pattern = Pattern.compile(patternStr);
+        Matcher matcher = pattern.matcher(host);
+        if(matcher.find()) {
+            instance = matcher.group(1);
+        }
+        return instance;
 	}
 	
 	public String getRESTInstance() throws MalformedURLException{
