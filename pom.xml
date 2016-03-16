@@ -3,6 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cubiccompass.om</groupId>
   <artifactId>OutboundMessageHandler</artifactId>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Salesforce Outbound Message Handler</name>
   <url>http://maven.apache.org</url>
